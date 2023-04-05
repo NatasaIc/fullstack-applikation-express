@@ -39,7 +39,7 @@ app.post("/new-movie", async (req, res) => {
     year: req.body.year,
     rating: req.body.title,
     genres: req.body.genres,
-    poster: req.body.postter
+    poster: req.body.poster
   }
 
   moviesData.add(newMovie);
