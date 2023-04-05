@@ -36,8 +36,11 @@ app.get("/movies", async (req, res) => {
 app.post("/new-movie", async (req, res) => {
   const newMovie: IMovie = {
     title: req.body.title,
+    year: req.body.year,
+    rating: req.body.title,
     genres: req.body.genres,
-  };
+    poster: req.body.postter
+  }
 
   moviesData.add(newMovie);
 
