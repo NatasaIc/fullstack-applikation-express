@@ -30,6 +30,17 @@ app.get("/movies", async (req, res) => {
   res.render("movies-list", { movies });
 });
 
+app.post('/new-movie', async (req, res) => {
+  const newMovie: IMovie = {
+    title: req.body.title,
+    genres: req.body.genres
+  }
+
+  moviesData.add(newMovie)
+
+  res.redirect("/movies")
+});
+
 
 
 app.listen(8008, () => {
