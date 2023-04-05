@@ -1,59 +1,23 @@
-<html lang="en">
-
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movies App</title>
-
-    <link rel="stylesheet" href="/style.css" />
-  </head>
-  <body>
-
-    {{! <div class="video-wrapper">
-  <video playsinline autoplay muted loop poster="cake.jpg">
-    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
-  <div class="header">
-    <h1>Blueberry Cheesecake</h1>
-    <button>Recipe here</button>
+<video id="background-video" autoplay loop muted>
+  <source src="../assets/cinema.seat.mp4" type="video/mp4" />
+</video>
+<div class="header">
+  <h1>Movies</h1>
+  <div class="container">
+    <div class="center">
+      <button class="btn">
+        <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+          <polyline
+            points="179,1 179,59 1,59 1,1 179,1"
+            class="bg-line"
+          ></polyline>
+          <polyline
+            points="179,1 179,59 1,59 1,1 179,1"
+            class="hl-line"
+          ></polyline>
+        </svg>
+        <span>See all movies</span>
+      </button>
+    </div>
   </div>
 </div>
- }}
-
-    <video id="background-video" autoplay loop muted>
-      {{! <source src="../assets/cinema.mp4" type="video/mp4" /> }}
-      <source src="../assets/cinema.seat.mp4" type="video/mp4" />
-    </video>
-    <div class="header">
-      <h1>Movies</h1>
-      <div class="container">
-        <div class="center">
-          <button class="btn">
-            <svg
-              width="180px"
-              height="60px"
-              viewBox="0 0 180 60"
-              class="border"
-            >
-              <polyline
-                points="179,1 179,59 1,59 1,1 179,1"
-                class="bg-line"
-              ></polyline>
-              <polyline
-                points="179,1 179,59 1,59 1,1 179,1"
-                class="hl-line"
-              ></polyline>
-            </svg>
-            <span>See all movies</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    {{{body}}}
-  </body>
-
-</html>
