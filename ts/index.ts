@@ -24,6 +24,7 @@ app.use(express.static("public"));
 app.get("/", (req, res) => {
   res.render("home", {
     style: "home.css",
+    title: "Movies Homepage",
   });
 });
 
@@ -32,18 +33,16 @@ app.get("/movies", async (req, res) => {
   res.render("movies-list", { movies });
 });
 
-app.post('/new-movie', async (req, res) => {
+app.post("/new-movie", async (req, res) => {
   const newMovie: IMovie = {
     title: req.body.title,
-    genres: req.body.genres
-  }
+    genres: req.body.genres,
+  };
 
-  moviesData.add(newMovie)
+  moviesData.add(newMovie);
 
-  res.redirect("/movies")
+  res.redirect("/movies");
 });
-
-
 
 app.listen(8008, () => {
   console.log("http://localhost:8008/");
