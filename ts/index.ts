@@ -30,6 +30,8 @@ app.get("/movies", async (req, res) => {
   res.render("movies-list", { movies });
 });
 
+
+
 app.listen(8008, () => {
   console.log("http://localhost:8008/");
 });
