@@ -2,8 +2,11 @@
 
 <form action="/new-movie" method="post">
     <input type="text" name="title" placeholder="Title"> <br>
+    <input type="text" name="year" placeholder="Year"><br>
+    <input type="number" name="rating" placeholder="Rating"><br>
     <input type="text" name="genres" placeholder="Genres"><br>
-
+    <input type="file" name="poster"><br>
+ 
     <input type="submit" value="Save">
 
 
@@ -12,7 +15,7 @@
 
 {{#each movies}}
 <p>
-    <a href="/movies/{{id}}">{{poster}} {{title}} {{year}} <br> {{rating}} {{genres}}</a>
+    <a href="/movies/{{id}}">{{poster}} {{title}} ({{year}}) <br> Rating: {{rating}} Genres: {{genres}}</a>
 </p>
 {{/each}}
 
