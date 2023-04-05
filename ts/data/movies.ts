@@ -1,7 +1,13 @@
 export interface IMovie {
   id?: number;
   title: string;
-  releaseDate: number;
+  genres: string;
+}
+
+export interface IMovie {
+  id?: number;
+  title: string;
+  genres: string;
 }
 
 export const movies = [
@@ -57,3 +63,32 @@ export const findById = (id: string) => {
   const movie = movies.find((c) => c.id === parsedId);
   return movie;
 };
+
+export const add = (movie: IMovie) => {
+  const lastMovie = movies.slice(-1)[0]
+
+  let id = (lastMovie?.id);
+  id = id ? id + 1 : 1;
+
+  movies.push({
+    id,
+    title: movie.title,
+    genres: movie.genres
+  })
+}
+
+export const update = (id: string, movie: IMovie) => {
+  const parsedId = parseInt(id)
+
+  const i = movies.findIndex(c => c.id === parsedId)
+
+  movies[i].title = movie.title
+  movies[i].genres = movie.genres
+}
+
+export const deleteBuId = (id: string) => {
+  const parsedId = parseInt(id);
+
+  const i = movies.findIndex(c => c.id === parsedId)
+  movies.splice(i, 1)
+}
