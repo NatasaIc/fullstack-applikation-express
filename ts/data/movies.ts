@@ -15,3 +15,10 @@ const movies = [
 export const getAll = () => {
   return movies;
 };
+
+export const findById = (id: string) => {
+  const parsedId = parseInt(id);
+
+  const movie = movies.find((c) => c.id === parsedId);
+  return movie;
+};
