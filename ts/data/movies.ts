@@ -50,7 +50,7 @@ export const movies = [
   },
   {
     id: 6,
-    title: "Schindler´s list",
+    title: "Schindlers list",
     year: 1993,
     rating: 9,
     genres: "Biography|Drama|History",
