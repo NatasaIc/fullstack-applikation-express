@@ -1,18 +1,18 @@
-<h2>Movies</h2>
-
-{{#each movies}}
-<p>
-    <a href="/movies/{{id}}">{{title}} {{genres}}</a>
-</p>
-{{/each}}
-
 <h2>Add a new movie to your list</h2>
 
 <form action="/new-movie" method="post">
-<input type="text" name="title" placeholder="Title"> <br>
-<input type="text" name="genres" placeholder="Genres"><br>
+    <input type="text" name="title" placeholder="Title"> <br>
+    <input type="text" name="genres" placeholder="Genres"><br>
 
-<input type="submit" value="Save">
+    <input type="submit" value="Save">
 
 
 </form>
+
+
+{{#each movies}}
+<p>
+    <a href="/movies/{{id}}">{{poster}} {{title}} {{year}} <br> {{rating}} {{genres}}</a>
+</p>
+{{/each}}
+

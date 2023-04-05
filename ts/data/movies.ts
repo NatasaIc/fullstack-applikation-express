@@ -1,55 +1,76 @@
 export interface IMovie {
   id?: number;
   title: string;
+  year: number;
+  rating: number;
   genres: string;
-}
-
-export interface IMovie {
-  id?: number;
-  title: string;
-  genres: string;
+  poster: string;
 }
 
 export const movies = [
   {
     id: 1,
-    title: "Tupac: Resurrection",
-    genres: "Documentary",
+    title: "The Shawshank Redemption",
+    year: 1994,
+    rating: 9.3,
+    genres: "Drama",
+    poster: "",
   },
   {
     id: 2,
-    title: "Africa addio",
-    genres: "Documentary",
+    title: "The Godfather",
+    year: 1972,
+    rating: 9.2,
+    genres: "Crime|Drama",
+    poster: "",
   },
   {
     id: 3,
-    title: "Jesse Stone: Night Passage",
-    genres: "Crime|Drama|Mystery",
+    title: "The Dark Knight",
+    year: 2008,
+    rating: 9.3,
+    genres: "Action|Drama|Crime",
+    poster: "",
   },
   {
     id: 4,
-    title: "Deewaar",
-    genres: "Action|Crime|Drama|Thriller",
+    title: "The Godfather II",
+    year: 1974,
+    rating: 9,
+    genres: "Crime|Drama",
+    poster: "",
   },
   {
     id: 5,
-    title: "General's Daughter, The",
-    genres: "Crime|Drama|Mystery|Thriller",
+    title: "12 Angry Men",
+    year: 1957,
+    rating: 9,
+    genres: "Crime|Drama",
+    poster: "",
   },
   {
     id: 6,
-    title: "Big Blue, The (Grand bleu, Le)",
-    genres: "Adventure|Drama|Romance",
+    title: "Schindler´s list",
+    year: 1993,
+    rating: 9,
+    genres: "Biography|Drama|History",
+    poster: "",
   },
   {
     id: 7,
-    title: "Samurai Rebellion (Jôi-uchi: Hairyô tsuma shimatsu)",
-    genres: "Action|Drama",
+    title: "The Lord of the Rings: The Return of the King",
+    year: 2003,
+    rating: 9,
+    genres: "Action|Drama|Adventure",
+    poster: "",
   },
   {
     id: 8,
-    title: "Sullivan's Travels",
-    genres: "Adventure|Comedy|Romance",
+    title: "Pulp Fiction",
+    year: 1994,
+    rating: 8.9,
+    genres: "Crime|Drama",
+    poster: "",
   },
 ];
 
@@ -73,7 +94,10 @@ export const add = (movie: IMovie) => {
   movies.push({
     id,
     title: movie.title,
-    genres: movie.genres
+    year: movie.year,
+    rating: movie.rating,
+    genres: movie.genres,
+    poster: movie.poster
   })
 }
 
@@ -83,7 +107,10 @@ export const update = (id: string, movie: IMovie) => {
   const i = movies.findIndex(c => c.id === parsedId)
 
   movies[i].title = movie.title
+  movies[i].year = movie.year
+  movies[i].rating = movie.rating
   movies[i].genres = movie.genres
+  movies[i].poster = movie.poster
 }
 
 export const deleteBuId = (id: string) => {
