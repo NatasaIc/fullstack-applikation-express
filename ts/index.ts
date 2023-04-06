@@ -36,6 +36,9 @@ app.get("/movies", async (req, res) => {
     style: "movies-list.css",
     title: "Movies List",
     link: "https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css",
+    integ:
+      "sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ",
+    org: "anonymous",
   });
 });
 
