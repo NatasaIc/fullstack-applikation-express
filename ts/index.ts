@@ -71,7 +71,7 @@ app.post("/new-movie", async (req, res) => {
 app.get("/movies/:id", async (req, res) => {
   const movie = moviesData.findById(req.params.id);
 
-  res.render("movie-single", movie)
+  res.render("movies-single", movie)
 });
 
 //Update one car 
