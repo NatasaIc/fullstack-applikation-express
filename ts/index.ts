@@ -42,14 +42,11 @@ app.get("/movies", async (req, res) => {
   });
 });
 
-//Show one movie page
-app.get("/movies/:id", (req, res) => {
-  const movie = moviesData.findById(req.params.id)
-  res.render("movies-single", { 
-    movie,
-    // style: "movies-single.css",
-  });
+//Show a page with one movie
+app.get("/movies/:id", async (req, res) => {
+  const movie = moviesData.findById(req.params.id);
 
+  res.render("movies-single", movie)
 });
 
 //Adding a new movie
@@ -67,12 +64,6 @@ app.post("/new-movie", async (req, res) => {
   res.redirect("/movies");
 });
 
-//Show a page with one movie
-app.get("/movies/:id", async (req, res) => {
-  const movie = moviesData.findById(req.params.id);
-
-  res.render("movies-single", movie)
-});
 
 //Update one car 
 app.post("/movies/:id/update", async (req, res) => {
