@@ -34,6 +34,16 @@ app.get("/movies", async (req, res) => {
   res.render("movies-list", { movies });
 });
 
+//Show one movie page
+app.get("/movies/:id", (req, res) => {
+  const movie = moviesData.findById(req.params.id)
+  res.render("movies-single", { 
+    movie,
+    // style: "movies-single.css",
+  });
+
+});
+
 //Adding a new movie
 app.post("/new-movie", async (req, res) => {
   const newMovie: IMovie = {
