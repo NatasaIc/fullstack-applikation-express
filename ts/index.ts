@@ -28,19 +28,21 @@ app.get("/", (req, res) => {
   });
 });
 
+//All movies page
 app.get("/movies", async (req, res) => {
   const movies = moviesData.getAll();
   res.render("movies-list", { movies });
 });
 
+//Adding a new movie
 app.post("/new-movie", async (req, res) => {
   const newMovie: IMovie = {
     title: req.body.title,
     year: req.body.year,
     rating: req.body.title,
     genres: req.body.genres,
-    poster: req.body.poster
-  }
+    poster: req.body.poster,
+  };
 
   moviesData.add(newMovie);
 
