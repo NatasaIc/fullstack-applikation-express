@@ -37,7 +37,7 @@ button {
 }
 
 .container {
-  margin-top: 30px;
+  margin-top: 80px;
   width: 400px;
   height: 400px;
   position: absolute;
@@ -89,4 +89,9 @@ svg {
   color: white;
   font-size: 15px;
   font-weight: 100;
+}
+
+a {
+  position: relative;
+  text-decoration: none;
 }
