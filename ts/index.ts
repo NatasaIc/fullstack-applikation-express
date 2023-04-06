@@ -70,7 +70,7 @@ app.post("/movies/:id/update", async (req, res) => {
 });
 
 //Delete a movie
-app.post("/cars/:id/delete", async (req, res) => {
+app.post("/movies/:id/delete", async (req, res) => {
   moviesData.deleteById(req.params.id);
 
   res.redirect("/movies");
