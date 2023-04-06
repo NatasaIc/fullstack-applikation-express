@@ -73,7 +73,7 @@ app.post("/movies/:id/update", async (req, res) => {
 app.post("/cars/:id/delete", async (req, res) => {
   moviesData.deleteById(req.params.id);
 
-  res.redirect("movies");
+  res.redirect("/movies");
 });
 
 app.listen(8008, () => {
