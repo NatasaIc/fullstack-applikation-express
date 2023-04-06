@@ -46,7 +46,10 @@ app.get("/movies", async (req, res) => {
 app.get("/movies/:id", async (req, res) => {
   const movie = moviesData.findById(req.params.id);
 
-  res.render("movies-single", movie)
+  res.render("movies-single", {
+    movie,
+    style: "movies-single.css",
+  })
 });
 
 //Adding a new movie
