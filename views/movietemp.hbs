@@ -4,12 +4,10 @@
         <img class="movie-image" src={{poster}} alt="{{title}}">
     </div>  
 
-    <a href="/movies" class="back-container">
-        <button class="back-button">
-            <img class="back-button-icon" src="../assets/arrow-left-square.svg" alt="">
-        </button>
+    <div id="back-button">
+        <img class="back-button-icon" src="../assets/arrow-left-square.svg" alt="">
         <p>Tillbaka till Movies</p>
-    </a>
+    </div>
 
     <div class="movie-content">
         <h1>{{ title }} ({{year}})</h1>
@@ -19,4 +17,4 @@
             <img class="star-icon" src="../assets/star.svg" alt=""/> <p>{{ rating }}/10</p>
         </div>
     </div>
-</div> 
+</div>

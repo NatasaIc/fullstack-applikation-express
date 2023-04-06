@@ -19,7 +19,9 @@ app.engine(
 app.set("view engine", "hbs");
 
 app.use(express.urlencoded({ extended: true }));
+
 app.use(express.static("public"));
+// app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
   res.render("home", {
@@ -39,12 +41,30 @@ app.get("/movies", async (req, res) => {
   });
 });
 
-//Show one movie page
+//Temporary  singles movie page for styling
+app.get("/movietemp", async (req, res) => {
+  const movies = moviesData.getAll();
+  
+  res.render("movietemp", {
+    title: "The Lord of the Rings: The Return of the King",
+    year: "2003",
+    rating: 9,
+    genres: "Action | Drama | Adventure",
+    poster: "https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1000_.jpg",
+    style: "movies-single.css",
+    });
+});
+
+//Show single movie page
 app.get("/movies/:id", (req, res) => {
-  const movie = moviesData.findById(req.params.id)
+  const movie = moviesData.findById(req.params.id);
   res.render("movies-single", { 
-    movie,
-    // style: "movies-single.css",
+    title: movie?.title,
+    year: movie?.year,
+    rating: movie?.rating,
+    genres: movie?.genres,
+    poster: movie?.poster,
+    style: "movies-single.css",
   });
 
 });
@@ -64,12 +84,12 @@ app.post("/new-movie", async (req, res) => {
   res.redirect("/movies");
 });
 
-//Show a page with one movie
-app.get("/movies/:id", async (req, res) => {
-  const movie = moviesData.findById(req.params.id);
+// //Show a page with one movie
+// app.get("/movies/:id", async (req, res) => {
+//   const movie = moviesData.findById(req.params.id);
 
-  res.render("movie-single", movie)
-});
+//   res.render("movie-single", movie)
+// });
 
 //Update one car 
 app.post("/movies/:id/update", async (req, res) => {
@@ -94,3 +114,16 @@ app.post("/movies/:id/delete", async (req, res) => {
 app.listen(8008, () => {
   console.log("http://localhost:8008/");
 });
+
+let backButton; 
+
+if (typeof document !== 'undefined'){
+  backButton = document.querySelector(".back-container") as HTMLDivElement;
+}
+
+backButton?.addEventListener("click", () => {
+  // app.get("/movietemp", (req, res) => {
+  //   res.redirect("/movies");
+  // });
+  console.log("funka");
+})
