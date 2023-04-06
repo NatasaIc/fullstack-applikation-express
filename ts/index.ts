@@ -49,6 +49,26 @@ app.post("/new-movie", async (req, res) => {
   res.redirect("/movies");
 });
 
+//Show a page with one movie
+app.get("/movies/:id", async (req, res) => {
+  const movie = moviesData.findById(req.params.id);
+
+  res.render("movies-single", movie)
+});
+
+//Update one car 
+app.post("/movies/:id/update", async (req, res) => {
+  moviesData.update(req.params.id, {
+    title: req.body.title,
+    year: req.body.year,
+    rating: req.body.title,
+    genres: req.body.genres,
+    poster: req.body.poster,
+  })
+
+  res.redirect("/movies")
+})
+
 app.listen(8008, () => {
   console.log("http://localhost:8008/");
 });
