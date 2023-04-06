@@ -14,7 +14,8 @@ export const movies = [
     year: 1994,
     rating: 9.3,
     genres: "Drama",
-    poster: "",
+    poster:
+      "https://pics.filmaffinity.com/The_Shawshank_Redemption-576140557-large.jpg",
   },
   {
     id: 2,
@@ -22,7 +23,8 @@ export const movies = [
     year: 1972,
     rating: 9.2,
     genres: "Crime|Drama",
-    poster: "",
+    poster:
+      "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
   },
   {
     id: 3,
@@ -30,7 +32,8 @@ export const movies = [
     year: 2008,
     rating: 9.3,
     genres: "Action|Drama|Crime",
-    poster: "",
+    poster:
+      "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg",
   },
   {
     id: 4,
@@ -38,7 +41,8 @@ export const movies = [
     year: 1974,
     rating: 9,
     genres: "Crime|Drama",
-    poster: "",
+    poster:
+      "https://m.media-amazon.com/images/M/MV5BMWMwMGQzZTItY2JlNC00OWZiLWIyMDctNDk2ZDQ2YjRjMWQ0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
   },
   {
     id: 5,
@@ -46,7 +50,8 @@ export const movies = [
     year: 1957,
     rating: 9,
     genres: "Crime|Drama",
-    poster: "",
+    poster:
+      "https://upload.wikimedia.org/wikipedia/commons/b/b5/12_Angry_Men_%281957_film_poster%29.jpg",
   },
   {
     id: 6,
@@ -54,7 +59,8 @@ export const movies = [
     year: 1993,
     rating: 9,
     genres: "Biography|Drama|History",
-    poster: "",
+    poster:
+      "https://m.media-amazon.com/images/M/MV5BNDE4OTMxMTctNmRhYy00NWE2LTg3YzItYTk3M2UwOTU5Njg4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
   },
   {
     id: 7,
@@ -62,7 +68,8 @@ export const movies = [
     year: 2003,
     rating: 9,
     genres: "Action|Drama|Adventure",
-    poster: "",
+    poster:
+      "https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1000_.jpg",
   },
   {
     id: 8,
@@ -70,7 +77,8 @@ export const movies = [
     year: 1994,
     rating: 8.9,
     genres: "Crime|Drama",
-    poster: "",
+    poster:
+      "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
   },
 ];
 
@@ -86,9 +94,9 @@ export const findById = (id: string) => {
 };
 
 export const add = (movie: IMovie) => {
-  const lastMovie = movies.slice(-1)[0]
+  const lastMovie = movies.slice(-1)[0];
 
-  let id = (lastMovie?.id);
+  let id = lastMovie?.id;
   id = id ? id + 1 : 1;
 
   movies.push({
@@ -97,25 +105,25 @@ export const add = (movie: IMovie) => {
     year: movie.year,
     rating: movie.rating,
     genres: movie.genres,
-    poster: movie.poster
-  })
-}
+    poster: movie.poster,
+  });
+};
 
 export const update = (id: string, movie: IMovie) => {
-  const parsedId = parseInt(id)
+  const parsedId = parseInt(id);
 
-  const i = movies.findIndex(c => c.id === parsedId)
+  const i = movies.findIndex((c) => c.id === parsedId);
 
-  movies[i].title = movie.title
-  movies[i].year = movie.year
-  movies[i].rating = movie.rating
-  movies[i].genres = movie.genres
-  movies[i].poster = movie.poster
-}
+  movies[i].title = movie.title;
+  movies[i].year = movie.year;
+  movies[i].rating = movie.rating;
+  movies[i].genres = movie.genres;
+  movies[i].poster = movie.poster;
+};
 
 export const deleteBuId = (id: string) => {
   const parsedId = parseInt(id);
 
-  const i = movies.findIndex(c => c.id === parsedId)
-  movies.splice(i, 1)
-}
+  const i = movies.findIndex((c) => c.id === parsedId);
+  movies.splice(i, 1);
+};

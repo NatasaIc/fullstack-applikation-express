@@ -1,21 +1,32 @@
 <h2>Add a new movie to your list</h2>
-
-<form action="/new-movie" method="post">
-    <input type="text" name="title" placeholder="Title"> <br>
-    <input type="text" name="year" placeholder="Year"><br>
-    <input type="number" name="rating" placeholder="Rating"><br>
-    <input type="text" name="genres" placeholder="Genres"><br>
-    <input type="file" name="poster"><br>
- 
-    <input type="submit" value="Save">
-
-
+<br />
+<form class="form-group" action="/new-movie" method="post">
+  <input type="text" name="title" placeholder="Title" />
+  <input type="text" name="year" placeholder="Year" />
+  <input type="number" name="rating" placeholder="Rating" />
+  <input type="text" name="genres" placeholder="Genres" />
+  <input type="url" name="poster" />
+  <input type="submit" value="Save" />
 </form>
-
-
-{{#each movies}}
-<p>
-    <a href="/movies/{{id}}">{{poster}} {{title}} ({{year}}) <br> Rating: {{rating}} Genres: {{genres}}</a>
-</p>
-{{/each}}
-
+<br />
+<div class="row">
+  {{#each movies}}
+    <div class="column">
+      <a href="/movies/{{id}}">
+        <p class="movieCard">
+          <img src={{poster}} alt="" />
+          <h3>{{title}} ({{year}})</h3>
+          <br />
+          <p class="detail">
+            Rating:
+            {{rating}}
+            <br />
+            <br />
+            Genres:
+            {{genres}}
+          </p>
+        </p>
+      </a>
+    </div>
+  {{/each}}
+</div>

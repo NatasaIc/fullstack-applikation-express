@@ -31,7 +31,12 @@ app.get("/", (req, res) => {
 //All movies page
 app.get("/movies", async (req, res) => {
   const movies = moviesData.getAll();
-  res.render("movies-list", { movies });
+  res.render("movies-list", {
+    movies,
+    style: "movies-list.css",
+    title: "Movies List",
+    link: "https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css",
+  });
 });
 
 //Adding a new movie
