@@ -113,7 +113,7 @@ export const update = (id: string, movie: IMovie) => {
   movies[i].poster = movie.poster
 }
 
-export const deleteBuId = (id: string) => {
+export const deleteById = (id: string) => {
   const parsedId = parseInt(id);
 
   const i = movies.findIndex(c => c.id === parsedId)

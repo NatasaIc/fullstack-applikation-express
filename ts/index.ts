@@ -53,7 +53,7 @@ app.post("/new-movie", async (req, res) => {
 app.get("/movies/:id", async (req, res) => {
   const movie = moviesData.findById(req.params.id);
 
-  res.render("movies-single", movie)
+  res.render("movie-single", movie)
 });
 
 //Update one car 
@@ -67,7 +67,14 @@ app.post("/movies/:id/update", async (req, res) => {
   })
 
   res.redirect("/movies")
-})
+});
+
+//Delete a movie
+app.post("/cars/:id/delete", async (req, res) => {
+  moviesData.deleteById(req.params.id);
+
+  res.redirect("movies");
+});
 
 app.listen(8008, () => {
   console.log("http://localhost:8008/");
