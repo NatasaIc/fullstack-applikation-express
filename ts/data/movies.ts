@@ -15,7 +15,7 @@ export const movies = [
     rating: 9.3,
     genres: "Drama",
     poster:
-      "https://pics.filmaffinity.com/The_Shawshank_Redemption-576140557-large.jpg",
+      "https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg",
   },
   {
     id: 2,
