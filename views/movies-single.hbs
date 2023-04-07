@@ -23,13 +23,14 @@
   <div class="movie-image">
     <img class="movie-image" src={{movie.poster}} alt="{{movie.title}}">
   </div>
-</div>
 
-<form action="/movies/{{movie.id}}/update" method="post">
-  <input type="text" name="title" placeholder="Title" value="{{movie.title}}"><br>
-  <input type="text" name="year" placeholder="Year" value="{{movie.year}}"><br>
-  <input type="text" name="rating" placeholder="Rating" value="{{movie.rating}}"><br>
-  <input type="text" name="genres" placeholder="Genres" value="{{movie.genres}}"><br>
-  <input type="text" name="poster" placeholder="Poster URL" value="{{movie.poster}}"> <br>
-  <input type="submit" value="Save">
+<form action="/movies/{{movie.id}}/update" method="post" class="form">
+<h4>Updatera film info</h4>
+  <input type="text" name="title" placeholder="Title" class="form-input"><br>
+  <input type="text" name="year" placeholder="Year"  class="form-input"><br>
+  <input type="text" name="rating" placeholder="Rating"  class="form-input"><br>
+  <input type="text" name="genres" placeholder="Genres"  class="form-input"><br>
+  <input type="text" name="poster" placeholder="Poster url" class="form-input"> <br>
+  <input class="save-btn" type="submit" value="Save">
 </form>
+</div>
