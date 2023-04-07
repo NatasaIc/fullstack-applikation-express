@@ -56,7 +56,7 @@ app.get("/movies/:id", async (req, res) => {
   res.render("movie-single", movie)
 });
 
-//Update one car 
+//Update one movie
 app.post("/movies/:id/update", async (req, res) => {
   moviesData.update(req.params.id, {
     title: req.body.title,
