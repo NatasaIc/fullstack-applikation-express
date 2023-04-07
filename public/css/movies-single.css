@@ -1,7 +1,133 @@
-h1 {
-    color: green;
+:root {
+    --header_font: Trebuchet MS;
+    --h1_font: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-h2 {
-    color: blue;
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #303032;
+}
+
+.container {
+    margin: 100px auto;
+    max-width: 1000px;
+    width: 90%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 {
+    margin: 0;
+    font-family: var(--h1_font);
+    font-size: 3.6rem;
+    color: #fff;
+}
+
+p {
+    font-family: var(--header_font);
+}
+
+.back-container {
+    position: relative;
+    margin-top: 40px;
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.back-container:hover p::after {
+    transform: scaleX(1);
+}
+
+.back-container p {
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    cursor: pointer;
+}
+
+.back-container p::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    right: 0;
+    transform: scaleX(0);
+    background-color: #fff;
+    transform-origin: bottom right;
+    transition: transform 250ms ease-out;
+}
+
+.back-button {
+    height: fit-content;
+    background: transparent;
+    border: none;
+    padding: 0 10px 0 0;
+    cursor: pointer;
+}
+
+.back-button-icon {
+    width: 30px;
+}
+
+.movie-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    padding-top: 100px;
+    color: #fff;
+}
+
+.rating-section {
+    height: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.rating-section:nth-child {
+    margin-right: 10px;
+}
+
+.imdb-icon {
+    margin-right: 10px;
+    height: 100%;
+    width: fit-content;
+}
+
+.star-icon {
+    margin-right: 10px;
+    height: 60%;
+}
+
+.delete-button {
+    margin-top: 40px;
+    height: 30px;
+    width: 100px;
+    cursor: pointer;
+    transition: 250ms ease-out;
+}
+
+.delete-button:hover {
+    opacity: 0.8;
+}
+
+.movie-image {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
 }
