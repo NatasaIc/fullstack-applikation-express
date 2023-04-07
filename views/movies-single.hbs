@@ -8,28 +8,28 @@
 <div class="container">
 
   <div class="movie-content">
-    <h1>{{ title }} ({{year}})</h1>
-    <p>{{ genres }}</p>
+    <h1>{{ movie.title }} ({{movie.year}})</h1>
+    <p>{{ movie.genres }}</p>
     <div class="rating-section">
       <img class="imdb-icon" src="../assets/imdb-logo.png" alt="" />
       <img class="star-icon" src="../assets/star.svg" alt="" />
-      <p>{{ rating }}/10</p>
+      <p>{{ movie.rating }}/10</p>
     </div>
-    <form action="/movies/{{id}}/delete" method="post">
+    <form action="/movies/{{movie.id}}/delete" method="post">
       <input class="delete-button" type="submit" value="Delete">
     </form>
   </div>
 
   <div class="movie-image">
-    <img class="movie-image" src={{poster}} alt="{{title}}">
+    <img class="movie-image" src={{movie.poster}} alt="{{movie.title}}">
   </div>
 </div>
 
-<form action="/movies/{{id}}/update" method="post">
-  <input type="text" name="title" placeholder="Title" value="{{title}}"><br>
-  <input type="text" name="year" placeholder="Year" value="{{year}}"><br>
-  <input type="text" name="rating" placeholder="Rating" value="{{rating}}"><br>
-  <input type="text" name="genres" placeholder="Genres" value="{{genres}}"><br>
-  <input type="text" name="poster" placeholder="Poster URL" value="{{poster}}"> <br>
+<form action="/movies/{{movie.id}}/update" method="post">
+  <input type="text" name="title" placeholder="Title" value="{{movie.title}}"><br>
+  <input type="text" name="year" placeholder="Year" value="{{movie.year}}"><br>
+  <input type="text" name="rating" placeholder="Rating" value="{{movie.rating}}"><br>
+  <input type="text" name="genres" placeholder="Genres" value="{{movie.genres}}"><br>
+  <input type="text" name="poster" placeholder="Poster URL" value="{{movie.poster}}"> <br>
   <input type="submit" value="Save">
 </form>

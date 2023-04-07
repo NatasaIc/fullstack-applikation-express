@@ -49,11 +49,11 @@ app.get("/movies/:id", async (req, res) => {
   res.render("movies-single", {
     movie,
     style: "movies-single.css",
-    title: movie?.title,
-    year: movie?.year,
-    rating: movie?.rating,
-    genres: movie?.genres,
-    poster: movie?.poster,
+    // title: movie?.title,
+    // year: movie?.year,
+    // rating: movie?.rating,
+    // genres: movie?.genres,
+    // poster: movie?.poster,
   })
 });
 
