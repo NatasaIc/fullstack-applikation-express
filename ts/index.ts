@@ -7,7 +7,6 @@ import * as moviesData from "./data/movies";
 import { IMovie } from "./data/movies";
 
 // Setting up handlebars
-
 app.engine(
   "hbs",
   exphbs.engine({
@@ -49,11 +48,6 @@ app.get("/movies/:id", async (req, res) => {
   res.render("movies-single", {
     movie,
     style: "movies-single.css",
-    // title: movie?.title,
-    // year: movie?.year,
-    // rating: movie?.rating,
-    // genres: movie?.genres,
-    // poster: movie?.poster,
   })
 });
 
@@ -73,7 +67,7 @@ app.post("/new-movie", async (req, res) => {
 });
 
 
-//Update one car 
+//Update one movie
 app.post("/movies/:id/update", async (req, res) => {
   moviesData.update(req.params.id, {
     title: req.body.title,
