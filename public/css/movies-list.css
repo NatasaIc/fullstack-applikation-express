@@ -25,13 +25,12 @@ h2 {
 
 .form-group {
   background: #212121;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   padding: 10px;
 }
 
 .form-group ul {
   list-style: none;
-  margin: 0 0 2em;
   padding: 0;
 }
 
@@ -108,6 +107,7 @@ h2 {
 
 .save-btn {
   margin-left: 40%;
+  margin-bottom: 20px;
   color: black;
   height: 30px;
   width: 100px;
