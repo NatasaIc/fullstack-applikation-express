@@ -15,8 +15,8 @@
     <h1>{{movie.title}} ({{movie.year}})</h1>
     <p>{{movie.genres}}</p>
     <div class="rating-section">
-      <img class="imdb-icon" src="../assets/imdb-logo.png" alt="" />
-      <img class="star-icon" src="../assets/star.svg" alt="" />
+      <img class="imdb-icon" src="../assets/imdb-logo.png" alt="imdb logo" />
+      <img class="star-icon" src="../assets/star.svg" alt="star" />
       <p>{{movie.rating}}/10</p>
     </div>
     <form action="/movies/{{movie.id}}/delete" method="post">
