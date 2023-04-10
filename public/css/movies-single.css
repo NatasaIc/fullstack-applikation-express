@@ -172,12 +172,11 @@ h4 {
     top: 60%;
   }
   body {
-    width: 100%;
-    height: 100vh;
     overflow-x: hidden;
     overflow-y: hidden;
   }
   .movieBg {
+    max-height: 150vh;
     position: absolute;
     overflow: hidden;
     background-repeat: no-repeat;
