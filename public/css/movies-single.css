@@ -119,7 +119,7 @@ p {
   height: 30px;
   width: 100px;
   cursor: pointer;
-  transition: 250ms ease-out;
+  transition: 9ms ease-out;
 }
 
 .delete-button:hover {
@@ -127,7 +127,7 @@ p {
 }
 
 .movie-image {
-  max-width: 500px;
+  max-width: 800px;
   width: 100%;
   height: auto;
 }
@@ -145,11 +145,12 @@ p {
 }
 
 .save-btn {
+  color: black;
   margin-top: 20px;
   height: 30px;
   width: 100px;
   cursor: pointer;
-  transition: 250ms ease-out;
+  transition: 8ms ease-out;
 }
 
 .save-btn:hover {

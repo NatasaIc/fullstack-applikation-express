@@ -30,12 +30,6 @@ button {
   color: white;
 }
 
-@media (max-width: 750px) {
-  #background-video {
-    display: none;
-  }
-}
-
 .container {
   margin-top: 80px;
   width: 400px;

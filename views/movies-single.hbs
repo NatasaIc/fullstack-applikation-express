@@ -6,7 +6,7 @@
       alt=""
     />
   </button>
-  <p>Tillbaka till Movies</p>
+  <p>Back to movies</p>
 </a>
 
 <div class="container">
@@ -29,7 +29,7 @@
   </div>
 
   <form action="/movies/{{movie.id}}/update" method="post" class="form">
-    <h4>Ta bort eller lägg till en ny film</h4>
+    <h4>Remove or edit a movie</h4>
     <input
       type="text"
       name="title"
@@ -61,6 +61,6 @@
       class="form-input"
     />
     <br />
-    <input class="save-btn" type="submit" value="Save" />
+    <button class="save-btn" type="submit">Save</button>
   </form>
 </div>
