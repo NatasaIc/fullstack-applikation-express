@@ -48,7 +48,7 @@ app.get("/movies/:id", async (req, res) => {
   res.render("movies-single", {
     movie,
     style: "movies-single.css",
-  })
+  });
 });
 
 //Adding a new movie
@@ -56,7 +56,7 @@ app.post("/new-movie", async (req, res) => {
   const newMovie: IMovie = {
     title: req.body.title,
     year: req.body.year,
-    rating: req.body.title,
+    rating: req.body.rating,
     genres: req.body.genres,
     poster: req.body.poster,
   };
@@ -66,18 +66,17 @@ app.post("/new-movie", async (req, res) => {
   res.redirect("/movies");
 });
 
-
 //Update one movie
 app.post("/movies/:id/update", async (req, res) => {
   moviesData.update(req.params.id, {
     title: req.body.title,
     year: req.body.year,
-    rating: req.body.title,
+    rating: req.body.rating,
     genres: req.body.genres,
     poster: req.body.poster,
-  })
+  });
 
-  res.redirect("/movies")
+  res.redirect("/movies");
 });
 
 //Delete a movie

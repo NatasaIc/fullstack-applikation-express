@@ -1,6 +1,10 @@
 <a href="/movies" class="back-container">
   <button class="back-button">
-    <img class="back-button-icon" src="../assets/arrow-left-square.svg" alt="">
+    <img
+      class="back-button-icon"
+      src="../assets/arrow-left-square.svg"
+      alt=""
+    />
   </button>
   <p>Tillbaka till Movies</p>
 </a>
@@ -8,29 +12,55 @@
 <div class="container">
 
   <div class="movie-content">
-    <h1>{{ movie.title }} ({{movie.year}})</h1>
-    <p>{{ movie.genres }}</p>
+    <h1>{{movie.title}} ({{movie.year}})</h1>
+    <p>{{movie.genres}}</p>
     <div class="rating-section">
       <img class="imdb-icon" src="../assets/imdb-logo.png" alt="" />
       <img class="star-icon" src="../assets/star.svg" alt="" />
-      <p>{{ movie.rating }}/10</p>
+      <p>{{movie.rating}}/10</p>
     </div>
     <form action="/movies/{{movie.id}}/delete" method="post">
-      <input class="delete-button" type="submit" value="Delete">
+      <input class="delete-button" type="submit" value="Delete" />
     </form>
   </div>
 
   <div class="movie-image">
-    <img class="movie-image" src={{movie.poster}} alt="{{movie.title}}">
+    <img class="movie-image" src={{movie.poster}} alt="{{movie.title}}" />
   </div>
 
-<form action="/movies/{{movie.id}}/update" method="post" class="form">
-<h4>Ta bort eller lägg till en ny film</h4>
-  <input type="text" name="title" placeholder="Title" class="form-input"><br>
-  <input type="text" name="year" placeholder="Year"  class="form-input"><br>
-  <input type="text" name="rating" placeholder="Rating"  class="form-input"><br>
-  <input type="text" name="genres" placeholder="Genres"  class="form-input"><br>
-  <input type="text" name="poster" placeholder="Poster url" class="form-input"> <br>
-  <input class="save-btn" type="submit" value="Save">
-</form>
+  <form action="/movies/{{movie.id}}/update" method="post" class="form">
+    <h4>Ta bort eller lägg till en ny film</h4>
+    <input
+      type="text"
+      name="title"
+      value="{{movie.title}}"
+      class="form-input"
+    /><br />
+    <input
+      type="number"
+      name="year"
+      value="{{movie.year}}"
+      class="form-input"
+    /><br />
+    <input
+      type="text"
+      name="rating"
+      value="{{movie.rating}}"
+      class="form-input"
+    /><br />
+    <input
+      type="text"
+      name="genres"
+      value="{{movie.genres}}"
+      class="form-input"
+    /><br />
+    <input
+      type="url"
+      name="poster"
+      value="{{movie.poster}}"
+      class="form-input"
+    />
+    <br />
+    <input class="save-btn" type="submit" value="Save" />
+  </form>
 </div>
