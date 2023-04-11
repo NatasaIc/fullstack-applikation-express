@@ -1,0 +1,53 @@
+<form class="form-group" action="/new-movie" method="post">
+  <section class="form-group">
+    <h2>Add a new movie</h2>
+    <ul class="form-fields">
+      <li>
+        <input type="text" name="title" placeholder="Title" />
+      </li>
+      <br />
+      <li>
+        <input type="number" name="year" placeholder="Year" />
+      </li>
+      <br />
+      <li>
+        <input type="text" name="rating" placeholder="Rating" />
+      </li>
+      <br />
+      <li>
+        <input type="text" name="genres" placeholder="Genres" />
+      </li>
+      <br />
+      <li>
+        <input type="url" name="poster" placeholder="Poster image link" />
+      </li>
+      <br />
+    </ul>
+  </section>
+  <section class="form-submit">
+    <button type="submit" class="save-btn">Save</button>
+  </section>
+</form>
+<main>
+  <div class="cards">
+    {{#each movies}}
+      <div class="card">
+        <a href="/movies/{{id}}">
+          <div class="card__image-container">
+            <img src={{poster}} />
+          </div>
+          <div class="card__content">
+            <p class="card__title text--medium">
+              {{title}}
+              ({{year}})
+            </p>
+            <div class="card__info">
+              <p class="text--medium">{{genres}}</p>
+              <p class="card__price text--medium">{{rating}}/10</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    {{/each}}
+  </div>
+</main>

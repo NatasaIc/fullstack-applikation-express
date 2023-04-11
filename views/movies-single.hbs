@@ -1,0 +1,67 @@
+<img class="movieBg" src={{movie.poster}} />
+<a href="/movies" class="back-container">
+  <button class="back-button">
+    <img
+      class="back-button-icon"
+      src="../assets/arrow-left-square.svg"
+      alt=""
+    />
+  </button>
+  <p>Back to movies</p>
+</a>
+
+<div class="container">
+
+  <div class="movie-content">
+    <h1>{{movie.title}} ({{movie.year}})</h1>
+    <p>{{movie.genres}}</p>
+    <div class="rating-section">
+      <img class="imdb-icon" src="../assets/imdb-logo.png" alt="imdb logo" />
+      <img class="star-icon" src="../assets/star.svg" alt="star" />
+      <p>{{movie.rating}}/10</p>
+    </div>
+    <form action="/movies/{{movie.id}}/delete" method="post">
+      <input class="delete-button" type="submit" value="Delete" />
+    </form>
+  </div>
+
+  <div class="movie-image">
+    <img class="movie-image" src={{movie.poster}} alt="{{movie.title}}" />
+  </div>
+
+  <form action="/movies/{{movie.id}}/update" method="post" class="form">
+    <h4>Remove or edit a movie</h4>
+    <input
+      type="text"
+      name="title"
+      value="{{movie.title}}"
+      class="form-input"
+    /><br />
+    <input
+      type="number"
+      name="year"
+      value="{{movie.year}}"
+      class="form-input"
+    /><br />
+    <input
+      type="text"
+      name="rating"
+      value="{{movie.rating}}"
+      class="form-input"
+    /><br />
+    <input
+      type="text"
+      name="genres"
+      value="{{movie.genres}}"
+      class="form-input"
+    /><br />
+    <input
+      type="url"
+      name="poster"
+      value="{{movie.poster}}"
+      class="form-input"
+    />
+    <br />
+    <button class="save-btn" type="submit">Save</button>
+  </form>
+</div>
