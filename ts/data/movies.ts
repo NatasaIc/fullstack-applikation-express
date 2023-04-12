@@ -7,7 +7,7 @@ export interface IMovie {
   poster: string;
 }
 
-export const movies = [
+export const movies: IMovie[] = [
   {
     id: 1,
     title: "The Shawshank Redemption",
